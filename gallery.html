@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | Venkateswar School</title>
+
+<link rel="icon" type="image/png" href="images/log.png" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+</head>
+
+<body class="bg-gray-100">
+
+<div id="header"></div>
+
+<!-- HERO -->
+<section class="bg-gradient-to-r from-indigo-900 to-purple-700 text-white py-20 text-center">
+  <h1 class="text-5xl font-bold mb-3">Photo Gallery</h1>
+  <p class="text-gray-200">Capturing moments of excellence & joy</p>
+</section>
+
+<!-- FILTER BUTTONS -->
+<section class="py-10 bg-white">
+<div class="max-w-6xl mx-auto text-center">
+
+<div class="flex flex-wrap justify-center gap-4">
+  <button onclick="filterImages('all')" class="filter-btn bg-indigo-600 text-white px-5 py-2 rounded-full">All</button>
+  <button onclick="filterImages('event')" class="filter-btn bg-gray-200 px-5 py-2 rounded-full">Events</button>
+  <button onclick="filterImages('sports')" class="filter-btn bg-gray-200 px-5 py-2 rounded-full">Sports</button>
+  <button onclick="filterImages('activity')" class="filter-btn bg-gray-200 px-5 py-2 rounded-full">Activities</button>
+</div>
+
+</div>
+</section>
+
+<!-- MASONRY GALLERY -->
+<section class="py-16">
+<div class="max-w-7xl mx-auto px-6 columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-5 space-y-5">
+
+<!-- ITEM -->
+<div class="gallery-item event relative cursor-pointer" onclick="openModal(this)">
+  <img src="images/annual.jpg" class="rounded-xl w-full">
+  <div class="overlay">Annual Day</div>
+</div>
+
+<div class="gallery-item sports relative cursor-pointer" onclick="openModal(this)">
+  <img src="images/sport.webp" class="rounded-xl w-full">
+  <div class="overlay">Sports Day</div>
+</div>
+
+<div class="gallery-item activity relative cursor-pointer" onclick="openModal(this)">
+  <img src="images/science.jpg" class="rounded-xl w-full">
+  <div class="overlay">Science Exhibition</div>
+</div>
+
+<div class="gallery-item event relative cursor-pointer" onclick="openModal(this)">
+  <img src="images/cul.jpg" class="rounded-xl w-full">
+  <div class="overlay">Cultural Program</div>
+</div>
+
+<div class="gallery-item activity relative cursor-pointer" onclick="openModal(this)">
+  <img src="images/act.jpg" class="rounded-xl w-full">
+  <div class="overlay">Classroom Activity</div>
+</div>
+
+<div class="gallery-item event relative cursor-pointer" onclick="openModal(this)">
+  <img src="images/assembly.jpg" class="rounded-xl w-full">
+  <div class="overlay">Morning Assembly</div>
+</div>
+
+<div class="gallery-item event relative cursor-pointer" onclick="openModal(this)">
+  <img src="images/teacher.jpg" class="rounded-xl w-full">
+  <div class="overlay">Teacher's Day</div>
+</div>
+
+<div class="gallery-item activity relative cursor-pointer" onclick="openModal(this)">
+  <img src="images/tree.jpg" class="rounded-xl w-full">
+  <div class="overlay">Plantation Drive</div>
+</div>
+
+</div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+  <span onclick="closeModal()" class="absolute top-6 right-8 text-white text-3xl cursor-pointer">&times;</span>
+  <img id="modalImg" class="max-w-4xl w-full rounded-lg shadow-lg">
+</div>
+
+<!-- STYLES -->
+<style>
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  color: white;
+  font-size: 14px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  opacity: 0;
+  transition: 0.3s;
+}
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+</style>
+
+<!-- SCRIPT -->
+<script>
+function filterImages(category) {
+  let items = document.querySelectorAll('.gallery-item');
+  let buttons = document.querySelectorAll('.filter-btn');
+
+  buttons.forEach(btn => btn.classList.remove('bg-indigo-600','text-white'));
+  event.target.classList.add('bg-indigo-600','text-white');
+
+  items.forEach(item => {
+    if (category === 'all' || item.classList.contains(category)) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
+
+function openModal(el) {
+  let img = el.querySelector('img').src;
+  document.getElementById('modalImg').src = img;
+  document.getElementById('modal').classList.remove('hidden');
+  document.getElementById('modal').classList.add('flex');
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.add('hidden');
+}
+</script>
+
+<div id="footer"></div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
