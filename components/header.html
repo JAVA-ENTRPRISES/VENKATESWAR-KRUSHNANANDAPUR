@@ -12,12 +12,12 @@
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
 
 <style>
-/* Dropdown */
-.group:hover .dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
+.nav-link.active {
+        color: #e63946;
+        font-weight: bold;
+        border-bottom: 2px solid #170b7d;
+        padding-bottom: 4px;
+      }
 </style>
 
 </head>
@@ -25,7 +25,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
 <body class="bg-gray-100">
 
 <!-- HEADER -->
-<header class="fixed w-full z-50 bg-white/70 backdrop-blur-xl shadow-sm">
+<header class="fixed w-full z-50 bg-black text-white  shadow-sm">
 
 <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
@@ -37,13 +37,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
 <!-- CENTER NAV -->
 <nav class="hidden lg:flex gap-8 text-gray-700 font-medium">
 
-<a href="index.html" class="hover:text-blue-600">Home</a>
-<a href="about.html" class="hover:text-blue-600">About</a>
-<a href="academic.html" class="hover:text-blue-600">Academics</a>
-<a href="admission.html" class="hover:text-blue-600">Admission</a>
-<a href="mandatory-disclosure.html" class="hover:text-blue-600">Mandatory Disclosure</a>
-<a href="gallery.html" class="hover:text-blue-600">Gallery</a>
-<a href="contact.html" class="hover:text-blue-600">Contact</a>
+<a href="index.html" class="nav-link hover:text-blue-600">Home</a>
+<a href="about.html" class="nav-link hover:text-blue-600">About</a>
+<a href="academic.html" class="nav-link hover:text-blue-600">Academics</a>
+<a href="admission.html" class="nav-link hover:text-blue-600">Admission</a>
+<a href="mandatory-disclosure.html" class="nav-link hover:text-blue-600">Mandatory Disclosure</a>
+<a href="gallery.html" class="nav-link hover:text-blue-600">Gallery</a>
+<a href="contact.html" class="nav-link hover:text-blue-600">Contact</a>
 
 </nav>
 
